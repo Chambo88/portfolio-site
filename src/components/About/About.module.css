@@ -1,0 +1,51 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(to bottom, #001C04 0%, #3C6044 63%, #181818 100%);
+  align-items: center;
+}
+
+.spacer {
+  height: var(--header-height);
+}
+
+.textContent {
+  display: flex;
+  flex-wrap: nowrap;
+  text-align: center;
+  color: white;
+  width: 100%;
+  margin-top: 22px;
+  opacity: 1;
+  transition: opacity 5s;
+}
+
+.revealText {
+  opacity: 0;
+}
+
+
+.left, .right {
+  flex: 1;
+}
+
+
+.center {
+  flex: 4;
+  white-space: pre-wrap;
+  height: 800px;
+}
+
+.loaderContainer {
+  font-family: "Ubuntu Mono", monospace;
+  font-weight: 400;
+  background-color: #181818B5;
+  color: white;
+  text-align: left;
+  width: 600x;
+  min-height: 40px;
+  min-width: 600px;
+  padding: 8px;
+  margin-top: 8px;
+}
+
