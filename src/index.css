@@ -1,6 +1,8 @@
-@import './variables.css';
+@import "./variables.css";
 
-html, body, #root {
+html,
+body,
+#root {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-weight: 200;
@@ -10,7 +12,8 @@ html, body, #root {
   padding: 0;
 }
 
-p, pre, h4 {
+p,
+pre,
+h4 {
   line-height: 1.5;
 }
-

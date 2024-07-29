@@ -1,7 +1,12 @@
 .content {
   display: flex;
   flex-direction: column;
-  background-image: linear-gradient(to bottom, #001C04 0%, #3C6044 63%, #181818 100%);
+  background-image: linear-gradient(
+    to bottom,
+    #001c04 0%,
+    #3c6044 63%,
+    #181818 100%
+  );
   align-items: center;
 }
 
@@ -12,40 +17,45 @@
 .textContent {
   display: flex;
   flex-wrap: nowrap;
+  white-space: pre-wrap; /* Ensure white space is preserved */
   text-align: center;
   color: white;
   width: 100%;
   margin-top: 22px;
-  opacity: 1;
-  transition: opacity 5s;
 }
 
-.revealText {
-  opacity: 0;
-}
-
-
-.left, .right {
+.left,
+.right {
   flex: 1;
 }
 
-
 .center {
   flex: 4;
-  white-space: pre-wrap;
-  height: 800px;
+  white-space: pre-wrap; /* Ensure white space is preserved */
+  height: 400px;
+  font-weight: 300;
+  color: white;
+  color: transparent;
+  background-image: linear-gradient(
+    white 0%,
+    white 33%,
+    rgb(255, 255, 255, 0) 66%,
+    rgb(255, 255, 255, 0) 100%
+  );
+  background-clip: text;
+  background-size: 100% 300%;
+  transition: background-position 5s;
 }
 
 .loaderContainer {
   font-family: "Ubuntu Mono", monospace;
   font-weight: 400;
-  background-color: #181818B5;
+  background-color: #181818b5;
   color: white;
   text-align: left;
   width: 600x;
   min-height: 40px;
   min-width: 600px;
   padding: 8px;
-  margin-top: 8px;
+  margin-top: 16px;
 }
-
