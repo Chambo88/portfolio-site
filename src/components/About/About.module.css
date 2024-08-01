@@ -1,23 +1,40 @@
-.content {
+.aboutContainer {
   display: flex;
   flex-direction: column;
   background-image: linear-gradient(
     to bottom,
-    #001c04 0%,
-    #3c6044 63%,
+    var(--dark-colour) 0%,
+    var(--primary-colour) 63%,
     #181818 100%
   );
   align-items: center;
+  height: 1100px;
+}
+
+/* Code looking sub title container */
+
+.subtitleContainer {
+  font-family: "Ubuntu Mono", monospace;
+  font-weight: 100;
+  background-color: var(--container-colour);
+  color: white;
+  text-align: left;
+  width: 600x;
+  min-height: 40px;
+  min-width: 600px;
+  padding: 8px;
+  margin-top: 16px;
 }
 
 .spacer {
   height: var(--header-height);
 }
 
-.textContent {
+/* About text and paragraph of text */
+
+.textContainer {
   display: flex;
   flex-wrap: nowrap;
-  white-space: pre-wrap; /* Ensure white space is preserved */
   text-align: center;
   color: white;
   width: 100%;
@@ -29,12 +46,8 @@
   flex: 1;
 }
 
-.center {
-  flex: 4;
-  white-space: pre-wrap; /* Ensure white space is preserved */
-  height: 400px;
+.left {
   font-weight: 300;
-  color: white;
   color: transparent;
   background-image: linear-gradient(
     white 0%,
@@ -47,15 +60,107 @@
   transition: background-position 5s;
 }
 
-.loaderContainer {
+.center {
+  flex: 4;
+  font-weight: 300;
+  color: transparent;
+  background-image: linear-gradient(
+    white 0%,
+    white 33%,
+    rgb(255, 255, 255, 0) 66%,
+    rgb(255, 255, 255, 0) 100%
+  );
+  background-clip: text;
+  background-size: 100% 300%;
+  transition: background-position 5s;
+}
+
+/* Photos */
+.image-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 110px;
+  width: 110px;
+}
+
+.circle-image {
+  border-radius: 50%;
+  box-shadow: 5px 5px 15px -2px rgb(32, 32, 32);
+  object-fit: cover;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  transition: width 0.3s ease-out, height 0.3s ease-out,
+    box-shadow 0.3s ease-out;
+}
+
+.circle-image:hover {
+  width: 110px;
+  height: 110px;
+  box-shadow: 5px 5px 20px 3px rgb(32, 32, 32);
+}
+
+.image-describe {
+  position: absolute;
+  left: -265px;
+  z-index: 1;
+}
+
+.image-icon {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--container-colour);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  left: 75px;
+  top: 75px;
+  z-index: 1;
+}
+
+.image-tooltip-container {
   font-family: "Ubuntu Mono", monospace;
-  font-weight: 400;
-  background-color: #181818b5;
+  font-weight: 100;
+  background-color: var(--container-colour);
   color: white;
   text-align: left;
-  width: 600x;
-  min-height: 40px;
-  min-width: 600px;
   padding: 8px;
-  margin-top: 16px;
+}
+
+/* Image gallery dialog */
+.dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  height: 500px;
+}
+
+.dialog-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+  min-width: 300px;
+  height: 200px;
+}
+
+.dialog-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
 }

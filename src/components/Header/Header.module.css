@@ -11,7 +11,7 @@
 }
 
 .content > h1 {
-  font-size: calc(15px + 30cqh);
+  font-size: calc(10px + 40cqh);
   text-align: center;
   white-space: nowrap;
   font-family: "Quicksand", Helvetica, Arial, sans-serif;

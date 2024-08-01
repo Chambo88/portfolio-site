@@ -2,7 +2,7 @@ import styles from "./Header.module.css";
 import { useEffect, useState } from "react";
 
 export const Header = () => {
-  const headerHeightMax = 0.25; // If adjusting header height, change --header-height in variables.css
+  const headerHeightMax = 0.2; // If adjusting header height, change --header-height in variables.css
   const [height, setHeight] = useState(window.innerHeight * headerHeightMax); // units px
   const [backgroundVisible, setBackgroundVisible] = useState(false);
   // const [displayVerticalLine, setVerticalLine] = useState(false);
