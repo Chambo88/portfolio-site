@@ -3,7 +3,7 @@ import styles from "./About.module.css";
 import { Loader } from "./Loader.tsx";
 import { PictureLoader } from "./PictureLoader.tsx";
 import PictureIcon from "./PictureIcon.tsx";
-import { GalleryDialog } from "./GalleryDialog.tsx";
+import { GalleryDialog } from "./Gallery/GalleryDialog.tsx";
 
 export const About = () => {
   const [loading, setLoading] = useState<boolean>(true);
