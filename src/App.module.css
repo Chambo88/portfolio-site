@@ -1,3 +1,12 @@
 .App {
-    width: 100%;
+  width: 100%;
+}
+
+.background-gradient {
+  background-image: linear-gradient(
+    to bottom,
+    var(--dark-colour) 0%,
+    var(--primary-colour) 63%,
+    #181818 100%
+  );
 }

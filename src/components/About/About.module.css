@@ -1,14 +1,13 @@
+.spacer {
+  height: var(--header-height);
+}
+
 .aboutContainer {
   display: flex;
   flex-direction: column;
-  background-image: linear-gradient(
-    to bottom,
-    var(--dark-colour) 0%,
-    var(--primary-colour) 63%,
-    #181818 100%
-  );
   align-items: center;
-  height: 1100px;
+  justify-content: space-around;
+  height: calc(100vh - var(--header-height));
 }
 
 /* Code looking sub title container */
@@ -16,18 +15,15 @@
 .subtitleContainer {
   font-family: "Ubuntu Mono", monospace;
   font-weight: 100;
+  font-size: 18px;
   background-color: var(--container-colour);
   color: white;
   text-align: left;
   width: 600x;
   min-height: 40px;
-  min-width: 600px;
+  min-width: 665px;
   padding: 8px;
   margin-top: 16px;
-}
-
-.spacer {
-  height: var(--header-height);
 }
 
 /* About text and paragraph of text */
@@ -47,7 +43,14 @@
 }
 
 .left {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.left > h4 {
+  padding-right: 150px;
   font-weight: 300;
+  font-size: 20px;
   color: transparent;
   background-image: linear-gradient(
     white 0%,
@@ -63,6 +66,8 @@
 .center {
   flex: 4;
   font-weight: 300;
+  line-height: 1.3;
+  font-size: 20px;
   color: transparent;
   background-image: linear-gradient(
     white 0%,
@@ -73,6 +78,7 @@
   background-clip: text;
   background-size: 100% 300%;
   transition: background-position 5s;
+  max-width: 700px;
 }
 
 /* Photos */
@@ -196,6 +202,12 @@
   width: 100%;
   height: 100%; /* Maintain aspect ratio */
   object-fit: cover;
+}
+
+.dialog-description-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 .dialog-mid-expand {

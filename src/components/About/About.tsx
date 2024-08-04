@@ -22,26 +22,25 @@ export const About = () => {
 
   return (
     <>
+      <div className={styles.spacer}></div>
       <div className={styles.aboutContainer}>
-        <div className={styles.spacer}></div>
         <Loader setLoading={setLoading} />
         <section className={styles.textContainer}>
-          <h4
-            className={styles.left}
-            style={{ backgroundPosition: loading ? "bottom" : "top" }}
-          >
-            ABOUT &gt;
-          </h4>
+          <div className={styles.left}>
+            <h4 style={{ backgroundPosition: loading ? "bottom" : "top" }}>
+              ABOUT &gt;
+            </h4>
+          </div>
           <article
             className={styles.center}
             style={{ backgroundPosition: loading ? "bottom" : "top" }}
           >
-            I'm super a passionate engineer that's dedicated to seeking out the
-            biggest problems to overcome. I strive to pursue excellence,
-            continuously grow, learn from talented people and inspire others.
+            I'm super a passionate SWE that's dedicated to seeking out the
+            biggest problems to overcome. I strive to pursue excellence, to
+            learn from those I admire and inspire others to do good.
             <br />
             <br /> When I'm not on the mouse & keys, I'm likely either hiking,
-            bouldering, jamming the guitar or (sometimes) dominating in games!.
+            bouldering, jamming the guitar or (sometimes) dominating in games!
             Originally from NZ and now based in Melbourne for the long haul.
             Always open to opportunities, feel free to give me a bell!
           </article>

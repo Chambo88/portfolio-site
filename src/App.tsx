@@ -5,8 +5,11 @@ import { About } from "./components/About/About";
 function App() {
   return (
     <div className={styles.App}>
-      <Header />
-      <About />
+      <div className={styles.backgroundGradient}>
+        <Header />
+        <About />
+      </div>
+
       <div style={{ backgroundColor: "red", height: "200vh" }}>hello</div>
       <div style={{ backgroundColor: "blue", height: "120vh" }}></div>
     </div>
