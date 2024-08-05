@@ -8,6 +8,7 @@
   align-items: center;
   justify-content: space-around;
   height: calc(100vh - var(--header-height));
+  min-height: 500px;
 }
 
 /* Code looking sub title container */
@@ -21,7 +22,7 @@
   text-align: left;
   width: 600x;
   min-height: 40px;
-  min-width: 665px;
+  min-width: 600px;
   padding: 8px;
   margin-top: 16px;
 }
@@ -88,13 +89,54 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 110px;
-  width: 110px;
+  height: 150px;
+  width: 150px;
+}
+
+.circle-image-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 150px;
+  -webkit-mask-image: linear-gradient(
+    white 0%,
+    white 20%,
+    rgb(255, 255, 255, 0) 80%,
+    rgb(255, 255, 255, 0) 100%
+  );
+  mask-image: linear-gradient(
+    white 0%,
+    white 20%,
+    rgb(255, 255, 255, 0) 80%,
+    rgb(255, 255, 255, 0) 100%
+  );
+  -webkit-mask-size: 100% 500%;
+  mask-size: 100% 500%;
+  -webkit-mask-position: bottom;
+  mask-position: bottom;
+  transition: none;
+}
+
+.animate-image-container {
+  animation: mask-position 3s linear forwards;
+}
+
+@keyframes mask-position {
+  0% {
+    -webkit-mask-position: bottom;
+    mask-position: bottom;
+  }
+  100% {
+    -webkit-mask-position: top;
+    mask-position: top;
+  }
 }
 
 .circle-image {
   border-radius: 50%;
-  box-shadow: 5px 5px 15px -2px rgb(32, 32, 32);
+  box-shadow: 5px 5px 8px 3px rgb(32, 32, 32);
   object-fit: cover;
   width: 100px;
   height: 100px;
@@ -106,7 +148,7 @@
 .circle-image:hover {
   width: 110px;
   height: 110px;
-  box-shadow: 5px 5px 20px 3px rgb(32, 32, 32);
+  box-shadow: 5px 5px 12px 5px rgb(32, 32, 32);
 }
 
 .image-describe {
@@ -122,11 +164,30 @@
   align-items: center;
   background-color: var(--container-colour);
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  left: 75px;
-  top: 75px;
+  width: 40px;
+  height: 40px;
+  left: 100px;
+  top: 95px;
   z-index: 1;
+  transform: scale(0);
+  transform-origin: center; /* Ensure the growth happens from the center */
+}
+
+.animate-image-icon {
+  animation: image-icon-size 1s ease-in-out forwards;
+  animation-delay: 1.5s;
+}
+
+@keyframes image-icon-size {
+  0% {
+    transform: scale(0); /* Start at scale 0 for both width and height */
+  }
+  80% {
+    transform: scale(1.2); /* Grow slightly larger than final size */
+  }
+  100% {
+    transform: scale(1); /* Settle at the final size */
+  }
 }
 
 .image-tooltip-container {
@@ -136,6 +197,13 @@
   color: white;
   text-align: left;
   padding: 8px;
+}
+
+/* socials */
+
+.social-container {
+  display: flex;
+  justify-content: center;
 }
 
 /* Image gallery dialog */
@@ -158,7 +226,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: rgba(10, 10, 10, 0.6);
+  background: rgba(10, 10, 10, 0.9);
   border-radius: 8px;
   width: calc(100vh);
   height: 80%;

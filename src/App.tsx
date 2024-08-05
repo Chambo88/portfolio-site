@@ -6,8 +6,10 @@ function App() {
   return (
     <div className={styles.App}>
       <div className={styles.backgroundGradient}>
-        <Header />
-        <About />
+        <div className={styles.backgroundTexture}>
+          <Header />
+          <About />
+        </div>
       </div>
 
       <div style={{ backgroundColor: "red", height: "200vh" }}>hello</div>
