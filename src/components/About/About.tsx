@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styles from "./About.module.css";
 import { Loader } from "./Loader.tsx";
 import { PictureLoader } from "./PictureLoader.tsx";
@@ -10,27 +10,12 @@ export const About = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [imageHover, setImageHover] = useState<boolean>(false);
   const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false);
-  const [startImageFade, setStartImageFade] = useState<boolean>(false);
-
-  useEffect(() => {
-    if (loading === false) {
-      setTimeout(() => {
-        const element = document.querySelector(`.${styles.animateImageIcon}`);
-        if (element) {
-          (element as HTMLElement).offsetHeight; // Force reflow
-        }
-        setStartImageFade(true);
-      }, 1500);
-    }
-  }, [loading]);
 
   const openDialog = () => {
-    console.log("hi");
     setIsDialogOpen(true);
   };
 
   const closeDialog = () => {
-    console.log("closeDialog");
     setIsDialogOpen(false);
   };
 
@@ -41,12 +26,15 @@ export const About = () => {
         <Loader setLoading={setLoading} />
         <section className={styles.textContainer}>
           <div className={styles.left}>
-            <h4 style={{ backgroundPosition: loading ? "bottom" : "top" }}>
+            <h4
+              className={styles.textFade}
+              style={{ backgroundPosition: loading ? "bottom" : "top" }}
+            >
               ABOUT &gt;
             </h4>
           </div>
           <article
-            className={styles.center}
+            className={`${styles.center} ${styles.textFade}`}
             style={{ backgroundPosition: loading ? "bottom" : "top" }}
           >
             I'm super a passionate SWE that's dedicated to seeking out the
@@ -64,7 +52,7 @@ export const About = () => {
         <div className={styles.imageContainer} onClick={openDialog}>
           <div
             className={`${styles.circleImageContainer} ${
-              startImageFade ? styles.animateImageContainer : ""
+              loading ? "" : styles.animateImageContainer
             }`}
           >
             <img
@@ -81,7 +69,7 @@ export const About = () => {
           </div>
           <div
             className={`${styles.imageIcon} ${
-              startImageFade ? styles.animateImageIcon : ""
+              loading ? "" : styles.animateImageIcon
             }`}
           >
             <PictureIcon fillColor="white" size={20} />

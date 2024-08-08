@@ -1,0 +1,56 @@
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Ubuntu Mono", monospace;
+  font-weight: 100;
+  font-size: 18px;
+  height: 40px;
+  text-decoration: none;
+  box-sizing: border-box;
+  color: #ffffff;
+  border: 2px solid var(--container-colour);
+  border-top: none;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.35s;
+  width: 140px;
+}
+
+.button-container span {
+  position: relative;
+  z-index: 1;
+}
+
+.button-container:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #ffffff;
+  transition: all 0.35s;
+}
+
+.button-container:hover {
+  color: #000000;
+  border-top: none;
+}
+
+.button-container:hover:after {
+  width: 100%;
+}
+
+.icon-container {
+  margin-top: 5px;
+  margin-left: 5px;
+  color: white;
+  z-index: 1;
+  transition: color 0.35s linear;
+}
+
+.button-container:hover .icon-container {
+  color: #000000; /* Changes icon color when hovered */
+}

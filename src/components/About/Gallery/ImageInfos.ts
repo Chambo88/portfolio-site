@@ -22,10 +22,6 @@ export const images: ImageInfo[] = [
     description: "Routeburn_Track",
   },
   {
-    address: "src/assets/frisbee.JPEG",
-    description: "Social_frisbee_tournament",
-  },
-  {
     address: "src/assets/friends_xmas.JPEG",
     description: "xmas_get_together",
   },

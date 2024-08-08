@@ -6,8 +6,8 @@
   background-image: linear-gradient(
     to bottom,
     var(--dark-colour) 0%,
-    var(--primary-colour) 63%,
-    #181818 100%
+    var(--primary-colour) 42%,
+    #181818 72%
   );
 }
 

@@ -12,6 +12,10 @@ body,
   padding: 0;
 }
 
+body {
+  overflow-y: "hidden";
+}
+
 p,
 pre,
 h4 {
